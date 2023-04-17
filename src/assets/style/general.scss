@@ -1,0 +1,15 @@
+@use './partials/variables' as *;
+
+// $fa-font-path: '../webfonts';
+@import '@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '@fortawesome/fontawesome-free/scss/solid.scss';
+
+@import 'bootstrap/scss/bootstrap';
+
+// @import '@fontsource/montserrat/index.css';
+// @import '@fontsource/montserrat/700.css';
+
+body{
+    background-image: url(../img/ddv14fm-c4766e02-5ad1-4742-8cf7-9597ab6f1dfe.png);
+    
+}
