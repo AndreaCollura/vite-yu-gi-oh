@@ -3,7 +3,7 @@
         <div class="text-center">
             <img :src="card.card_images[0].image_url" :alt="card.name">
             <h4>{{ card.name }}</h4>
-            <span class="text-uppercase">{{ card.archetype || card.race }}</span>
+            <span class="text-uppercase">{{ card.archetype}}</span>
         </div>
     </div>
 </template>
