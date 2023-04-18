@@ -5,11 +5,13 @@ export const store = reactive({
     baseUrl: 'https://db.ygoprodeck.com/api/v7/cardinfo.php?',
     endpoint: '&num=50&offset=0',
     inputs:{
-        name: '',
+        fname: '',
         archetype: ''
         
 
-    }
+    },
+    errortxt: '',
 
+    loadingscreen: false
     
 })

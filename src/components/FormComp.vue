@@ -2,25 +2,24 @@
     <div class="container d-flex justify-content-center">
         <form @submit.prevent="startSearch" class="row d-flex g-5">
             <div class="col">
-
                 <div class="form-outline">
-                    <input type="text" id="cardName" class="form-control"
-                        v-model.trim="store.inputs.name" />
-                    <label class="form-label text-warning" for="form9Example3">Card Name</label>
+                    <input placeholder="Search by name..." type="text" id="cardName" class="form-control" v-model.trim="store.inputs.fname" />
                 </div>
             </div>
-            <select  class="selectpicker" id="searchName"  v-model="store.inputs.archetype">
-                <option>Search for Archetypes...</option>
-                <option  :value="option.archetype_name" v-for="(option, index) in archetypeOptions" :key="index">
+            <select class="selectpicker" id="searchName" v-model="store.inputs.archetype">
+                <option selected value>Search by archetype...</option>
+                <option></option>
+                <option :value="option.archetype_name" v-for="(option, index) in archetypeOptions" :key="index">
                     {{ option.archetype_name }}
                 </option>
-
             </select>
-            <div class="d-flex justify-content-center mt-5">
-                <button type="submit" class="btn btn-primary">Search</button>
+            <div class="d-flex justify-content-center mt-4">
+                <button type="submit" class="btn btn-primary me-3">Search</button>
+                <button @click="newSearch" type="reset" class="btn btn-danger">Clean</button>
+            </div>
+            <div class="d-flex justify-content-center mt-4">
             </div>
         </form>
-        
     </div>
 </template>
 
@@ -41,6 +40,11 @@ export default {
         startSearch() {
             this.$emit('searchChange');
             // console.log(store.inputs.archetype);
+        },
+        newSearch() {
+            store.inputs.fname = '';
+            store.inputs.archetype = 0;
+            this.$emit('searchChange');
         }
 
 
@@ -60,5 +64,6 @@ export default {
 .selectpicker {
     width: 20rem;
     height: 40px;
+    border-radius: 8px;
 }
 </style>
